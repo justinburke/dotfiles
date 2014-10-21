@@ -1,0 +1,21 @@
+# with uptime:
+#hardstatus alwayslastline "%-Lw%{= BW}%50>%n%f* %t%{-}%+Lw%< %=%l %H"
+# without uptime:
+hardstatus alwayslastline "%-Lw%{= BW}%50>%n%f* %t%{-}%+Lw%< %=%H"
+
+nethack on
+#autodetach on
+defscrollback 10000
+#startup_message off
+#time
+#vbell off
+#caption always "%{= bb}%{+b w}%n %h %=%t %c"
+#hardstatus alwayslastline "%-Lw%{= BW}%50>%n%f* %t%{-}%+Lw%<"
+
+bindkey ® next	# alt+>
+bindkey ¬ prev	# alt+<
+bindkey . next
+bindkey , prev
+
+unsetenv SSH_AUTH_SOCK
+setenv SSH_AUTH_SOCK $HOME/.ssh/agent-socket
