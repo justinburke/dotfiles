@@ -2,7 +2,10 @@
 # file *should generate no output* or it will break the scp and rcp commands.
 
 # colors for ls, etc.
-eval `dircolors -b /etc/DIR_COLORS`
+if [ -e /etc/DIR_COLORS ]; then
+  eval `dircolors -b /etc/DIR_COLORS`
+fi
+
 alias l='ls -l'
 alias ls="ls --color=auto"
 alias ll="l -a"
