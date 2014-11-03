@@ -1,0 +1,89 @@
+" numerics
+set backspace=2		" so i can backspace over newlines, indentation, etc.
+
+"set background=dark
+
+" my wordfile
+"set dictionary=/usr/share/dict/words
+
+set hidden		" allow hidden buffers. supposedly a 'must have'
+set hlsearch		" highlight matches on searches
+set ignorecase		" ignore case on searches
+set magic		" enable extended regexp support
+set nobackup		" don't store my crap in /tmp
+set nocompatible	" non-vi compatible mode
+set nostartofline	" preserve column on page movements
+set nowrap		" so lines don't wrap
+set nowritebackup	" don't create a backup file before overwrite
+set ruler		" show curson position
+set showcmd		" show current uncompleted command
+set showmode		" show current mode
+set wildmenu		" displays filenames in menubar
+
+set pastetoggle=<F12>
+
+" my coding settings
+au BufNewFile,BufRead *.{php,pl,phps,cgi} set expandtab shiftwidth=4 autoindent smartindent
+
+au BufNewFile,BufRead *.{c,h,cc,cpp,C} set expandtab shiftwidth=3 formatoptions=croq autoindent cindent smartindent backspace=2
+
+au BufNewFile,BufRead mutt* set tw=72 wrap formatoptions=tq2 syntax=mail
+au BufNewFile,BufRead mutt* map <buffer> <F8> :%g/^> >/d<CR>
+au BufNewFile,BufRead mutt* setlocal spell spelllang=en_us
+"au Syntax mail source ~/.vim/after/syntax/mail.vim
+
+hi def link mailQuoted1		Identifier
+hi def link mailQuoted2		Statement
+hi def link mailQuoted3		Type
+hi def link mailQuoted4		Special
+hi def link mailQuoted5		Comment
+hi def link mailQuoted6		mailQuoted1
+hi def link mailHeaderEmail	mailEmail
+hi def link mailEmail		String
+
+au BufNewFile,BufREad *.tex set ai tw=80 et
+au BufNewFile,BufREad *.tex map <buffer> <F8> :w<CR> :!latex %<CR>
+ 
+au Syntax help syn clear helpNote
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" ABBREVIATIONS
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+ab Jusitn Justin
+
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" MAPPINGS
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"imap <C-h> i
+imap <C-g> i
+imap <C-k> ka
+imap <C-l> la
+imap <C-j> ja
+
+"fix the backspace
+imap [3~ <BS>
+
+map <F4> :nohl<CR>
+
+" allow for quick saves
+map <F10> :w<CR>
+imap <F10> <ESC>:w<CR>a
+
+
+" format paragraphs
+"imap <C-j> !}fmt<CR>
+
+" ,cmt will insert "// " at the start of the line. Works in blocks too.
+"map ,cmt :s/^/\/\/ /
+
+" cycle fast thru buffers ...
+nnoremap <C-n> :bn<CR>
+nnoremap <C-p> :bp<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+

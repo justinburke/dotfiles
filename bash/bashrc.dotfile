@@ -1,0 +1,50 @@
+# This file is sourced by all *interactive* bash shells on startup.  This
+# file *should generate no output* or it will break the scp and rcp commands.
+
+# colors for ls, etc.
+eval `dircolors -b /etc/DIR_COLORS`
+alias l='ls -l'
+alias ls="ls --color=auto"
+alias ll="l -a"
+
+alias more='less'
+
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+alias po=popd
+alias pd=pushd
+
+alias res='screen -x'
+alias ws='w | sort'
+
+export HISTIGNORE="&:l:[bf]g:exit:mutt:w:ws:jobs"
+export HISTSIZE=10000
+#export MAIL=$HOME/.mail/Inbox
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+shopt -s cdspell cmdhist extglob
+
+export PATH=$PATH:/sbin:/usr/sbin:~/bin:
+
+# Change the window title of X terminals 
+case $TERM in
+	xterm*|rxvt|Eterm|eterm)
+		PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/$HOME/~}\007"'
+		;;
+	screen)
+		PROMPT_COMMAND='echo -ne "\033_${USER}@${HOSTNAME%%.*}:${PWD/$HOME/~}\033\\"'
+		;;
+esac
+
+##uncomment the following to activate bash-completion:
+[ -f /etc/profile.d/bash-completion ] && source /etc/profile.d/bash-completion
+
+export CL1="\[\033[01;32m\]"
+export CL2="\[\033[01;34m\]"
+export PS1="$CL1($CL2\D{%m/%d} \t$CL1) \j \u@\h:$CL2\w\n$CL2$ \[\033[0m\]"
+
+export LANG=
