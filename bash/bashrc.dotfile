@@ -51,3 +51,13 @@ export CL2="\[\033[01;34m\]"
 export PS1="$CL1($CL2\D{%m/%d} \t$CL1) \j \u@\h:$CL2\w\n$CL2$ \[\033[0m\]"
 
 export LANG=
+
+export PAGER="less"
+
+# Fix sort order:
+# (From http://www.madboa.com/geek/utf8/)
+export LC_COLLATE="C"
+
+# use -X so that less doesn't clear the screen
+export LESS="${LESS:+$LESS }-X -R"
+
