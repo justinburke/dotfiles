@@ -1,0 +1,151 @@
+! fluxbox-update_configs added '(workspace=[current])' to (Next|Prev)(Window|Group)
+! check lines marked by 'FBCV13' if they are correctly updated
+!mouse actions added by fluxbox-update_configs
+OnTitlebar Mouse1 :MacroCmd {Focus} {Raise} {ActivateTab}
+!mouse actions added by fluxbox-update_configs
+OnTitlebar Move1 :StartMoving
+OnLeftGrip Move1 :StartResizing bottomleft
+OnRightGrip Move1 :StartResizing bottomright
+OnWindowBorder Move1 :StartMoving
+
+# click on the desktop to get menus
+OnDesktop Mouse1 :HideMenus
+OnDesktop Mouse2 :WorkspaceMenu
+OnDesktop Mouse3 :RootMenu
+
+# scroll on the desktop to change workspaces
+OnDesktop Mouse4 :NextWorkspace
+OnDesktop Mouse5 :PrevWorkspace
+
+# scroll on the toolbar to change workspaces
+OnToolbar Mouse4 :NextWorkspace
+OnToolbar Mouse5 :PrevWorkspace
+
+# alt + left/right click to move/resize a window
+OnWindow Mod1 Mouse1 :MacroCmd {Raise} {Focus} {StartMoving}
+OnWindow Mod1 Mouse3 :MacroCmd {Raise} {Focus} {StartResizing NearestCorner}
+
+# middle click a window's titlebar and drag to attach windows
+OnTitlebar Mouse2 :StartTabbing
+
+# double click on the titlebar to shade
+OnTitlebar Double Mouse1 :Shade
+
+# right click on the titlebar for a menu of options
+OnTitlebar Mouse3 :WindowMenu
+
+# alt-tab
+Mod1 Tab :NextWindow {groups} (workspace=[current])  !! FBCV13 !!
+Mod1 Shift Tab :PrevWindow {groups} (workspace=[current])  !! FBCV13 !!
+
+# cycle through tabs in the current window
+Mod4 Tab :NextTab
+Mod4 Shift Tab :PrevTab
+
+# go to a specific tab in the current window
+Mod4 1 :Tab 1
+Mod4 2 :Tab 2
+Mod4 3 :Tab 3
+Mod4 4 :Tab 4
+Mod4 5 :Tab 5
+Mod4 6 :Tab 6
+Mod4 7 :Tab 7
+Mod4 8 :Tab 8
+Mod4 9 :Tab 9
+
+# open a terminal
+Mod1 F1 :Exec xterm
+
+# open a dialog to run programs
+Mod1 F2 :Exec fbrun
+
+# volume settings, using common keycodes
+# if these don't work, use xev to find out your real keycodes
+176 :Exec amixer sset Master,0 1+
+174 :Exec amixer sset Master,0 1-
+160 :Exec amixer sset Master,0 toggle
+
+# current window commands
+Mod1 F4 :Close
+Mod1 F9 :Minimize
+Mod1 F10 :Maximize
+Mod1 F11 :Fullscreen
+
+# open the window menu
+Mod1 space :WindowMenu
+
+# exit fluxbox
+Control Mod1 Delete :Exit
+
+# change to a specific workspace
+Control 1 :Workspace 1
+Control 2 :Workspace 2
+Control 3 :Workspace 3
+Control 4 :Workspace 4
+Control 5 :Workspace 5
+Control 6 :Workspace 6
+#Control F7 :Workspace 7
+#Control F8 :Workspace 8
+#Control F9 :Workspace 9
+#Control F10 :Workspace 10
+#Control F11 :Workspace 11
+#Control F12 :Workspace 12
+
+# send the current window to a specific workspace
+Shift Mod1 1 :SendToWorkspace 1
+Shift Mod1 2 :SendToWorkspace 2
+Shift Mod1 3 :SendToWorkspace 3
+Shift Mod1 4 :SendToWorkspace 4
+Shift Mod1 5 :SendToWorkspace 5
+Shift Mod1 6 :SendToWorkspace 6
+Shift Mod1 7 :SendToWorkspace 7
+Shift Mod1 8 :SendToWorkspace 8
+Shift Mod1 9 :SendToWorkspace 9
+Shift Mod1 10 :SendToWorkspace 10
+Shift Mod1 11 :SendToWorkspace 11
+Shift Mod1 12 :SendToWorkspace 12
+
+# send the current window and change to a specific workspace
+Control Shift Mod1 1 :TakeToWorkspace 1
+Control Shift Mod1 2 :TakeToWorkspace 2
+Control Shift Mod1 3 :TakeToWorkspace 3
+Control Shift Mod1 4 :TakeToWorkspace 4
+Control Shift Mod1 5 :TakeToWorkspace 5
+Control Shift Mod1 6 :TakeToWorkspace 6
+Control Shift Mod1 7 :TakeToWorkspace 7
+Control Shift Mod1 8 :TakeToWorkspace 8
+Control Shift Mod1 9 :TakeToWorkspace 9
+
+Control Shift Mod1 Left :TakeToPrevWorkspace
+Control Shift Mod1 Right :TakeToNextWorkspace
+
+
+Control Left  :PrevWorkspace
+Control Right :NextWorkspace
+
+# Screenlock
+#Control Mod1 l :Exec gnome-screensaver-command -l
+#Mod4 l :Exec gnome-screensaver-command -l
+Control Mod1 l :Exec xscreensaver-command --lock
+Mod4 l :Exec xscreensaver-command --lock
+
+# VLC controls
+Control Shift Home :Exec bin/vlc-socket.sh pause
+Control Shift Up   :Exec bin/vlc-socket.sh volup 1
+Control Shift Down :Exec bin/vlc-socket.sh voldown 1
+Mod4 Home :Exec bin/vlc-socket.sh pause
+Mod4 Up   :Exec bin/vlc-socket.sh volup 1
+Mod4 Down :Exec bin/vlc-socket.sh voldown 1
+
+# Toggle window decor
+Mod1 Shift d    :ToggleDecor
+Mod1 Shift s    :Shade
+Mod1 Shift t    :Stick
+
+# Lower/Raise Window
+Mod1 Control Shift Up   :Raise
+Mod1 Control Shift Down :Lower
+
+# Calculator
+Control Shift F12 :Exec gnome-calculator
+

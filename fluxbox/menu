@@ -1,0 +1,12 @@
+[begin] (fluxbox)
+[submenu] (Favorites) {}
+  [exec] (gnome-terminal) {gnome-terminal}
+  [exec] (Chrome) {google-chrome} </opt/google/chrome/product_logo_32.xpm>
+  [exec] (Chrome Personal) {google-chrome --user-data-dir=/home/jburke/.config/google-chrome.Personal} </opt/google/chrome/product_logo_32.xpm>
+  [exec] (Firefox) {firefox}
+  [exec] (vlc) {/usr/bin/qvlc} </usr/share/icons/hicolor/32x32/apps/vlc.xpm>
+  [exec] (gnome-system-monitor) {gnome-system-monitor}
+  [exec] (gnome-control-center) {gnome-control-center}
+[end]
+[include] (/etc/X11/fluxbox/fluxbox-menu)
+[end]
