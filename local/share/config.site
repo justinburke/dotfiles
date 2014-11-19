@@ -1,0 +1,4 @@
+CFLAGS=-I$HOME/local/include
+CPPFLAGS=-I$HOME/local/include
+LDFLAGS=-L$HOME/local/lib
+LD_LIBRARY_PATH=$HOME/local/lib
