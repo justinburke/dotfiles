@@ -61,3 +61,4 @@ export LC_COLLATE="C"
 # use -X so that less doesn't clear the screen
 export LESS="${LESS:+$LESS }-X -R"
 
+alias fixagent="ln -sf $SSH_AUTH_SOCK $HOME/.ssh/agent-socket"
