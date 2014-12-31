@@ -51,3 +51,8 @@ export CL2="\[\033[01;34m\]"
 export PS1="$CL1($CL2\D{%m/%d} \t$CL1) \j \u@\h:$CL2\w\n$CL2$ \[\033[0m\]"
 
 export LANG=
+
+export RAMDIR=/ramdisk/$USER
+if [ -d /ramdisk -a ! -d $RAMDIR ]; then
+  mkdir $RAMDIR && chmod 0700 $RAMDIR
+fi
