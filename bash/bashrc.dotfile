@@ -54,6 +54,8 @@ export LANG=
 
 export PAGER="less"
 
+export GREP_OPTIONS="--color"
+
 # Fix sort order:
 # (From http://www.madboa.com/geek/utf8/)
 export LC_COLLATE="C"
