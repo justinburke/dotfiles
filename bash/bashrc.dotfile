@@ -64,6 +64,7 @@ export LC_COLLATE="C"
 export LESS="${LESS:+$LESS }-X -R"
 
 alias fixagent="ln -sf $SSH_AUTH_SOCK $HOME/.ssh/agent-socket"
+alias sp='source $HOME/.gpg-agent-info'
 
 export RAMDIR=/ramdisk/$USER
 if [ -d /ramdisk -a ! -d $RAMDIR ]; then
