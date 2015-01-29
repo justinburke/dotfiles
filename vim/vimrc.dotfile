@@ -19,6 +19,7 @@ set ruler		" show curson position
 set showcmd		" show current uncompleted command
 set showmode		" show current mode
 set wildmenu		" displays filenames in menubar
+set wildmode=list:longest
 
 set pastetoggle=<F12>
 
