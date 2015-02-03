@@ -21,6 +21,8 @@ set showmode		" show current mode
 set wildmenu		" displays filenames in menubar
 set wildmode=list:longest
 
+syntax enable           " Enable syntax highlighting, keep current color settings.
+
 set pastetoggle=<F12>
 
 " my coding settings
@@ -53,8 +55,6 @@ au Syntax help syn clear helpNote
 
 ab Jusitn Justin
 
-
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" MAPPINGS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -86,5 +86,27 @@ nnoremap <C-n> :bn<CR>
 nnoremap <C-p> :bp<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" http://vim.wikia.com/wiki/Easily_switch_between_source_and_header_file
+map <F8> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Relative line numberings
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set nonumber
+    set norelativenumber
+  else
+    set number
+    set relativenumber
+  endif
+endfunc
+
+nnoremap <C-j> :call NumberToggle()<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" " http://www.cmake.org/Wiki/CMake_Editors_Support
+" :autocmd BufRead,BufNewFile *.cmake,CMakeLists.txt,*.cmake.in runtime! indent/cmake.vim
+" :autocmd BufRead,BufNewFile *.cmake,CMakeLists.txt,*.cmake.in setf cmake
+" :autocmd BufRead,BufNewFile *.ctest,*.ctest.in setf cmake
+
+" vim:filetype=vim:syntax=on
