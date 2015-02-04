@@ -1,7 +1,9 @@
 " numerics
 set backspace=2		" so i can backspace over newlines, indentation, etc.
 
-"set background=dark
+autocmd GUIEnter * :colors koehler
+set background=dark
+
 
 " my wordfile
 "set dictionary=/usr/share/dict/words
