@@ -24,7 +24,7 @@ alias ws='w | sort'
 
 export HISTIGNORE="&:l:[bf]g:exit:mutt:w:ws:jobs"
 export HISTSIZE=10000
-#export MAIL=$HOME/.mail/Inbox
+export HISTFILESIZE=50000
 
 # append to the history file, don't overwrite it
 shopt -s histappend
