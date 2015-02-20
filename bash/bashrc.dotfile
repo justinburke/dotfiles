@@ -31,7 +31,7 @@ shopt -s histappend
 
 shopt -s cdspell cmdhist extglob
 
-export PATH=$PATH:/sbin:/usr/sbin:~/bin:
+export PATH=$PATH:/sbin:/usr/sbin:~/bin
 
 # Change the window title of X terminals 
 case $TERM in
