@@ -54,7 +54,7 @@ export LANG=
 
 export PAGER="less"
 
-export GREP_OPTIONS="--color"
+export GREP_OPTIONS="--color --line-number"
 
 # Fix sort order:
 # (From http://www.madboa.com/geek/utf8/)
