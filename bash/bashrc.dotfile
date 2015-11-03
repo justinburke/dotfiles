@@ -70,3 +70,7 @@ export RAMDIR=/ramdisk/$USER
 if [ -d /ramdisk -a ! -d $RAMDIR ]; then
   mkdir $RAMDIR && chmod 0700 $RAMDIR
 fi
+
+if [ -f /etc/bash_completion.d/password-store ]; then
+  source /etc/bash_completion.d/password-store
+fi
