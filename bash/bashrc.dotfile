@@ -22,6 +22,8 @@ alias pd=pushd
 alias res='screen -x'
 alias ws='w | sort'
 
+# don't put duplicate lines or lines starting with space in the history.
+export HISTCONTROL=ignoreboth
 export HISTIGNORE="&:l:[bf]g:exit:mutt:w:ws:jobs"
 export HISTSIZE=10000
 export HISTFILESIZE=50000
