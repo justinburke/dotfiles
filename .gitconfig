@@ -4,19 +4,6 @@
 
 	# Force Git to prompt for user.email and user.name for each repository.
 	useConfigOnly = true
-[push]
-	default = simple
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	required = true
-
-[branch]
-  autosetupmerge = true
-  autosetuprebase = always
-[color]
-  status = auto
-  branch = auto
 [alias]
   lg = log --graph --date=short --pretty=format:'%C(magenta)%cd %Creset | %C(magenta) %h %G? %Creset | %Creset%s %C(yellow)<%an>%C(red)%d'
   lgf = log -C -M --follow --graph --date=short --pretty=format:'%C(blue)%cd %C(magenta)| %C(blue)%h %G? %C(magenta)| %Creset%s %C(yellow)<%an>%C(red)%d'
@@ -30,12 +17,22 @@
   co = checkout
 [branch "master"]
   rebase = true
-[push]
-  default = simple
+[branch]
+  autosetupmerge = true
+  autosetuprebase = always
+[color]
+  status = auto
+  branch = auto
+[fetch]
+	prune = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	required = true
+
 [git-p4]
 	largeFileSystem = GitLFS
 [merge]
 #	ff = only
-
-[fetch]
-	prune = true
+[push]
+	default = simple
