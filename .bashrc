@@ -3,7 +3,7 @@
 
 # colors for ls, etc.
 if [ -e /etc/DIR_COLORS ]; then
-  eval `dircolors -b /etc/DIR_COLORS`
+   eval `dircolors -b /etc/DIR_COLORS`
 fi
 
 alias l='ls -l'
@@ -25,8 +25,8 @@ alias ws='w | sort'
 # don't put duplicate lines or lines starting with space in the history.
 export HISTCONTROL=ignoreboth
 export HISTIGNORE="&:l:[bf]g:exit:mutt:w:ws:jobs"
-export HISTSIZE=10000
-export HISTFILESIZE=50000
+export HISTSIZE=100000
+export HISTFILESIZE=500000
 
 # append to the history file, don't overwrite it
 shopt -s histappend
@@ -37,12 +37,12 @@ export PATH=$PATH:/sbin:/usr/sbin:~/bin
 
 # Change the window title of X terminals 
 case $TERM in
-	xterm*|rxvt|Eterm|eterm)
-		PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/$HOME/~}\007"'
-		;;
-	screen)
-		PROMPT_COMMAND='echo -ne "\033_${USER}@${HOSTNAME%%.*}:${PWD/$HOME/~}\033\\"'
-		;;
+   xterm*|rxvt|Eterm|eterm)
+      PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/$HOME/~}\007"'
+      ;;
+   screen)
+      PROMPT_COMMAND='echo -ne "\033_${USER}@${HOSTNAME%%.*}:${PWD/$HOME/~}\033\\"'
+      ;;
 esac
 
 ##uncomment the following to activate bash-completion:
@@ -70,19 +70,25 @@ alias sp='source $HOME/.gpg-agent-info'
 
 export RAMDIR=/ramdisk/$USER
 if [ -d /ramdisk -a ! -d $RAMDIR ]; then
-  mkdir $RAMDIR && chmod 0700 $RAMDIR
+   mkdir $RAMDIR && chmod 0700 $RAMDIR
 fi
 
 if [ -f /etc/bash_completion.d/password-store ]; then
-  source /etc/bash_completion.d/password-store
+   source /etc/bash_completion.d/password-store
 elif [ -f /usr/local/etc/bash_completion.d/password-store ]; then
-  source /usr/local/etc/bash_completion.d/password-store
+   source /usr/local/etc/bash_completion.d/password-store
 fi
 
 if [ $(uname -s) == "Darwin" ]; then
-  alias ls="ls -F"
+   alias ls="ls -F"
 
-  if [ -f /usr/local/bin/vim ]; then
-    export EDITOR="/usr/local/bin/vim"
-  fi
+   if [ -f /usr/local/bin/vim ]; then
+      export EDITOR="/usr/local/bin/vim"
+   fi
+
+   if [ -x /usr/local/bin/vim ]; then
+      alias vim="/usr/local/bin/vim"
+   fi
 fi
+
+# set et:sw=3:ts=3
