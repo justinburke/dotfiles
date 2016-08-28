@@ -73,6 +73,11 @@ process_file "$basedir/.gnupg/gpg-agent.conf" "dotfiles/gnupg/gpg-agent.conf" "d
 process_file "$basedir/.screenrc" "dotfiles/screen/screenrc.dotfile" "dotfiles/.screenrc"
 process_file "$basedir/.vimrc"    "dotfiles/vim/vimrc.dotfile"       "dotfiles/.vimrc"
 
+echo "!!!! Don't forget to update bash history in this session:"
+echo "export HISTSIZE=100000"
+echo "export HISTFILESIZE=500000"
+echo "OR export HISTFILE="
+echo
 echo "Done."
 
 # vi:et:sw=4:ts=4
