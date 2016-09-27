@@ -22,6 +22,8 @@ alias pd=pushd
 alias res='screen -x'
 alias ws='w | sort'
 
+alias pst='ps axjf'   # pstree-like output from ps
+
 # don't put duplicate lines or lines starting with space in the history.
 export HISTCONTROL=ignoreboth
 export HISTIGNORE="&:l:[bf]g:exit:mutt:w:ws:jobs"
