@@ -149,3 +149,14 @@ Mod1 Control Shift Down :Lower
 # Calculator
 Control Shift F12 :Exec gnome-calculator
 
+# Move window
+#Control Shift Mod4 Right :MoveRight 250
+#Control Shift Mod4 Left  :MoveLeft 250
+#Control Shift Mod4 Up    :MoveUp 250
+#Control Shift Mod4 Down  :MoveDown 250
+
+# Resize
+Control Shift Mod4 Right :ResizeHorizontal 10
+Control Shift Mod4 Left  :ResizeHorizontal -10
+Control Shift Mod4 Up    :ResizeVertical -10
+Control Shift Mod4 Down  :ResizeVertical 10

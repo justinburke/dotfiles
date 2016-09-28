@@ -5,7 +5,7 @@ hardstatus alwayslastline "%-Lw%{= BW}%50>%n%f* %t%{-}%+Lw%< %=%H"
 
 nethack on
 #autodetach on
-defscrollback 10000
+defscrollback 100000
 #startup_message off
 #time
 #vbell off
@@ -19,3 +19,7 @@ bindkey , prev
 
 unsetenv SSH_AUTH_SOCK
 setenv SSH_AUTH_SOCK $HOME/.ssh/agent-socket
+
+# Fix F1-F4 keys when using PuTTY.
+# http://unix.stackexchange.com/questions/119515/how-do-i-fix-this-strange-behavior-with-ssh-gnome-terminal-and-gnu-screen-where
+termcapinfo xterm 'k1=\E[11~:k2=\E[12~:k3=\E[13~:k4=\E[14~'
