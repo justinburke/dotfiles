@@ -109,7 +109,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-#### START jburke customizations
 # some more ls aliases
 alias ll='ls -alF'
 alias l='ls -lF'
@@ -175,4 +174,4 @@ if [ "$TERM" == "screen" ]; then
 	export TERM="screen-256color"
 fi
 
-#### END jburke customizations
+# set et:sw=3:ts=3
