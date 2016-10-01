@@ -1,12 +1,32 @@
 [begin] (fluxbox)
 [submenu] (Favorites) {}
   [exec] (gnome-terminal) {gnome-terminal}
-  [exec] (Chrome) {google-chrome} </opt/google/chrome/product_logo_32.xpm>
-  [exec] (Chrome Personal) {google-chrome --user-data-dir=/home/jburke/.config/google-chrome.Personal} </opt/google/chrome/product_logo_32.xpm>
-  [exec] (Firefox) {firefox}
   [exec] (vlc) {/usr/bin/qvlc} </usr/share/icons/hicolor/32x32/apps/vlc.xpm>
+  [nop]  (-----------)
+  [exec] (Slack) {slack}
+  [exec] (GitKraken) {gitkraken}
+  [exec] (RDP (remmina\)) {remmina}
+  [exec] (VirtualBox) {virtualbox}
+  [exec] (VMWare) {vmware}
+  [exec] (p4v) {p4v}
+  [exec] (pinta) {pinta}
+  [exec] (baobab - disk usage) {baobab}
+  [nop]  (-----------)
+  [exec] (xterm 122x45) {xterm -geometry 122x45}
+  [exec] (xterm 167x31 oryx wide) {xterm -geometry 167x31}
+  [exec] (xterm 110x39 oryx IRC) {xterm -geometry 110x39}
+  [nop]  (-----------)
+  [exec] (Chrome)           {google-chrome} </opt/google/chrome/product_logo_32.xpm>
+  [exec] (Chrome Personal)  {google-chrome --user-data-dir=/home/jburke/.config/google-chrome.Personal} </opt/google/chrome/product_logo_32.xpm>
+  [exec] (Chrome VNC)  {google-chrome --user-data-dir=/home/jburke/.config/google-chrome.VNC} </opt/google/chrome/product_logo_32.xpm>
+  [exec] (Chrome Proxy)     {google-chrome --user-data-dir=/home/jburke/.config/google-chrome.Proxy     --proxy-server=localhost:3128} </opt/google/chrome/product_logo_32.xpm>
+#  [exec] (Chrome Downloads) {google-chrome --user-data-dir=/home/jburke/.config/google-chrome.Downloads --proxy-server=localhost:3128} </opt/google/chrome/product_logo_32.xpm>
+  [exec] (Firefox) {firefox}
+  [nop]  (-----------)
   [exec] (gnome-system-monitor) {gnome-system-monitor}
-  [exec] (gnome-control-center) {gnome-control-center}
+  [exec] (unity-control-center) {unity-control-center}
+  [exec] (CrashPlanDesktop) {CrashPlanDesktop}
+#  [exec] (gnome-control-center) {gnome-control-center}
 [end]
 [include] (/etc/X11/fluxbox/fluxbox-menu)
 [end]
