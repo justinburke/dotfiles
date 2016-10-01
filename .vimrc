@@ -30,6 +30,8 @@ Plugin 'rking/ag.vim'
 Plugin 'LucHermitte/lh-vim-lib'
 Plugin 'LucHermitte/local_vimrc'
 
+Plugin 'jlanzarotta/bufexplorer'
+
 "Plugin 'kana/vim-operator-user'
 "Plugin 'rhysd/vim-clang-format'
 
