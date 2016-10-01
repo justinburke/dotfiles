@@ -32,6 +32,8 @@ Plugin 'LucHermitte/local_vimrc'
 
 Plugin 'jlanzarotta/bufexplorer'
 
+Plugin 'ivalkeen/vim-ctrlp-tjump'
+
 "Plugin 'kana/vim-operator-user'
 "Plugin 'rhysd/vim-clang-format'
 
@@ -147,6 +149,10 @@ vmap <F7> :pyf /usr/share/clang/clang-format-3.8/clang-format.py<CR>
 " cycle fast thru buffers ...
 " nnoremap <C-n> :bn<CR>
 " nnoremap <C-p> :bp<CR>
+
+" Prefer CtrlPtjump
+nnoremap <c-]> :CtrlPtjump<cr>
+vnoremap <c-]> :CtrlPtjumpVisual<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Faster grepping (from https://robots.thoughtbot.com/faster-grepping-in-vim)
