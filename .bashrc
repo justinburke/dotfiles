@@ -149,9 +149,12 @@ export PATH=$HOME/bin:$PATH:$HOME/local/bin
 if [ ! -z "$(which gpg2)" ]; then
   alias gpg="$(which gpg2)"
 fi
-if [ -e $HOME/.gpg-agent-info ]; then
+if [ -e $HOME/.gnupg/S.gpg-agent.ssh ]; then
+  export SSH_AUTH_SOCK="$HOME/.gnupg/S.gpg-agent.ssh"
+elif [ -e $HOME/.gpg-agent-info ]; then
   source $HOME/.gpg-agent-info
 fi
+
 alias fixagent='ln -sf $SSH_AUTH_SOCK $HOME/.ssh/agent-socket'
 alias grabsshauthsock='export SSH_AUTH_SOCK="$( ls /tmp/ssh-*/agent.* | head -n1 )"'
 
@@ -173,5 +176,10 @@ export PASSWORD_STORE_X_SELECTION="primary"
 if [ "$TERM" == "screen" ]; then
 	export TERM="screen-256color"
 fi
+
+function bash_ps1() {
+	export PS1='\[\033[01;32m\](\[\033[01;34m\]\D{%m/%d} \t\[\033[01;32m\]) \j \u@\h:\[\033[01;34m\]$(dirs)$(__git_ps1)\n\[\033[01;34m\]$ \[\033[0m\]'
+	export GIT_PS1_SHOWDIRTYSTATE=1
+}
 
 # set et:sw=3:ts=3
