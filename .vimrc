@@ -17,7 +17,9 @@ let g:ctrlp_match_window = 'results:100'  " Load up to 100 results instead of li
 
 " Plugin 'git://github.com/tpope/vim-fugitive.git'
 
-Plugin 'git://github.com/majutsushi/tagbar.git'
+" Disable tagbar, lots of errors (2016-10-21)
+" Plugin 'git://github.com/majutsushi/tagbar.git'
+
 " Plugin 'bling/vim-bufferline'
 "
 Plugin 'vim-airline/vim-airline'
@@ -137,8 +139,8 @@ map <F7> V%zf<CR>
 
 " Formatting
 " map <F6> :!sort --ignore-case<CR>
-nmap <F7> :%pyf /usr/share/clang/clang-format-3.8/clang-format.py<CR>
-vmap <F7> :pyf /usr/share/clang/clang-format-3.8/clang-format.py<CR>
+nmap <F7> :%py3file /home/jburke/local/share/clang/clang-format-3.8/clang-format.py<CR>
+vmap <F7> :py3file /home/jburke/local/share/clang/clang-format-3.8/clang-format.py<CR>
 
 " format paragraphs
 "imap <C-j> !}fmt<CR>
