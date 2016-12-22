@@ -168,7 +168,7 @@ if [ -d /ramdisk -a ! -d ${RAMDIR} ]; then
 fi
 
 if [ -f $HOME/local/completion/pass.bash-completion ]; then
-  source $HOME/local/completion/pass.bash-completion 
+  source $HOME/local/completion/pass.bash-completion
 fi
 
 export PASSWORD_STORE_X_SELECTION="primary"
