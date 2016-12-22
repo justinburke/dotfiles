@@ -35,6 +35,7 @@ Plugin 'LucHermitte/local_vimrc'
 Plugin 'jlanzarotta/bufexplorer'
 
 Plugin 'ivalkeen/vim-ctrlp-tjump'
+let g:ctrlp_tjump_only_silent = 1  " Skip tag window if only one match is found.
 
 "Plugin 'kana/vim-operator-user'
 "Plugin 'rhysd/vim-clang-format'
