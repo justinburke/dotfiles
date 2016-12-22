@@ -96,7 +96,8 @@ Shift Mod1 1 :SendToWorkspace 1
 Shift Mod1 2 :SendToWorkspace 2
 Shift Mod1 3 :SendToWorkspace 3
 Shift Mod1 4 :SendToWorkspace 4
-Shift Mod1 5 :SendToWorkspace 5
+# Google Docs strikethrough hotkey
+#Shift Mod1 5 :SendToWorkspace 5
 Shift Mod1 6 :SendToWorkspace 6
 Shift Mod1 7 :SendToWorkspace 7
 Shift Mod1 8 :SendToWorkspace 8
