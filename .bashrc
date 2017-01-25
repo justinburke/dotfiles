@@ -81,6 +81,10 @@ elif [ -f /usr/local/etc/bash_completion.d/password-store ]; then
    source /usr/local/etc/bash_completion.d/password-store
 fi
 
+if [ -f /usr/local/etc/bash_completion.d/brew ]; then
+   source /usr/local/etc/bash_completion.d/brew
+fi
+
 if [ $(uname -s) == "Darwin" ]; then
    alias ls="ls -F"
 
