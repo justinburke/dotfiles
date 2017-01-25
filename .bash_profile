@@ -6,6 +6,10 @@ unset MAILCHECK
 
 # Setup GPG:
 export GPG_TTY=$(tty)
+if [ -S "${HOME}/.gnupg/S.gpg-agent.ssh" ]; then
+  export SSH_AUTH_SOCK="${HOME}/.gnupg/S.gpg-agent.ssh"
+fi
+
 #if [ -f "${HOME}/.gpg-agent-info" ]; then
 #  . "${HOME}/.gpg-agent-info"
 #  export GPG_AGENT_INFO

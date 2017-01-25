@@ -1,11 +1,8 @@
 [user]
-	name = Justin Burke
-	email = jburke@alt255.com
-
 	# Force Git to prompt for user.email and user.name for each repository.
 	useConfigOnly = true
-	#email = jburke@tanium.com
-	#name = Justin Burke
+	email = jburke@tanium.com
+	name = Justin Burke
 [push]
 	default = simple
 [branch]
