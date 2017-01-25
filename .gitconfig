@@ -1,0 +1,42 @@
+[user]
+	name = Justin Burke
+	email = jburke@alt255.com
+
+	# Force Git to prompt for user.email and user.name for each repository.
+	useConfigOnly = true
+	#email = jburke@tanium.com
+	#name = Justin Burke
+[push]
+	default = simple
+[branch]
+  autosetupmerge = true
+  autosetuprebase = always
+[color]
+  status = auto
+  branch = auto
+[alias]
+  lg = log --graph --date=short --pretty=format:'%C(magenta)%cd %Creset | %C(magenta) %h %G? %Creset | %Creset%s %C(yellow)<%an>%C(red)%d'
+  lgf = log -C -M --follow --graph --date=short --pretty=format:'%C(blue)%cd %C(magenta)| %C(blue)%h %G? %C(magenta)| %Creset%s %C(yellow)<%an>%C(red)%d'
+  l  = log --name-status --relative
+  lp = log -p --relative -b -w --stat
+  d  = diff -w -b
+  s = show -w -b --stat -p
+  st = status -s -b
+  ff = pull --ff-only
+  b = branch
+  co = checkout
+[branch "master"]
+  rebase = true
+[push]
+  default = simple
+[git-p4]
+	largeFileSystem = GitLFS
+[merge]
+#	ff = only
+
+[fetch]
+	prune = true
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg2
