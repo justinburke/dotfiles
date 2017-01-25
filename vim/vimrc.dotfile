@@ -21,6 +21,8 @@ set showmode		" show current mode
 set wildmenu		" displays filenames in menubar
 set wildmode=list:longest
 
+set modelines&          " Reset modelines value to default. (Overwrite OSX default.)
+
 set pastetoggle=<F12>
 
 " my coding settings

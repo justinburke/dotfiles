@@ -4,6 +4,13 @@
 # disable checking for new mail
 unset MAILCHECK
 
+# Setup GPG:
+export GPG_TTY=$(tty)
+#if [ -f "${HOME}/.gpg-agent-info" ]; then
+#  . "${HOME}/.gpg-agent-info"
+#  export GPG_AGENT_INFO
+#fi
+
 ## Start up the ssh-agent
 ##
 #SSHAGENT=/usr/bin/ssh-agent

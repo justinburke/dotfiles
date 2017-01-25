@@ -6,8 +6,13 @@ if [ -e /etc/DIR_COLORS ]; then
   eval `dircolors -b /etc/DIR_COLORS`
 fi
 
+if [ "$(uname)" == "Darwin" ]; then
+  echo >/dev/null  # noop
+elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+  alias ls="ls --color=auto"
+fi
+
 alias l='ls -l'
-alias ls="ls --color=auto"
 alias ll="l -a"
 
 alias more='less'
@@ -23,7 +28,9 @@ alias res='screen -x'
 alias ws='w | sort'
 
 export HISTIGNORE="&:l:[bf]g:exit:mutt:w:ws:jobs"
-export HISTSIZE=10000
+export HISTSIZE=100000
+export HISTFILESIZE=500000
+export HISTCONTROL=ignoreboth
 #export MAIL=$HOME/.mail/Inbox
 
 # append to the history file, don't overwrite it
@@ -70,3 +77,7 @@ export RAMDIR=/ramdisk/$USER
 if [ -d /ramdisk -a ! -d $RAMDIR ]; then
   mkdir $RAMDIR && chmod 0700 $RAMDIR
 fi
+
+export EDITOR=vim
+
+source /usr/local/etc/bash_completion.d/password-store
