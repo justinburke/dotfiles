@@ -83,7 +83,7 @@ Control 2 :Workspace 2
 Control 3 :Workspace 3
 Control 4 :Workspace 4
 Control 5 :Workspace 5
-Control 6 :Workspace 6
+#Control 6 :Workspace 6
 #Control F7 :Workspace 7
 #Control F8 :Workspace 8
 #Control F9 :Workspace 9

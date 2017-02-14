@@ -13,6 +13,7 @@
   [exec] (baobab - disk usage) {baobab}
   [nop]  (-----------)
   [exec] (xterm 122x45) {xterm -geometry 122x45}
+  [exec] (xterm 292x103 coding) {xterm -geometry 292x103}
   [exec] (xterm 167x31 oryx wide) {xterm -geometry 167x31}
   [exec] (xterm 110x39 oryx IRC) {xterm -geometry 110x39}
   [nop]  (-----------)
