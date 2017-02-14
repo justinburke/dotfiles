@@ -17,15 +17,14 @@ let g:ctrlp_match_window = 'results:100'  " Load up to 100 results instead of li
 
 " Plugin 'git://github.com/tpope/vim-fugitive.git'
 
-" Disable tagbar, lots of errors (2016-10-21)
-" Plugin 'git://github.com/majutsushi/tagbar.git'
-
 " Plugin 'bling/vim-bufferline'
 "
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 " Enable tabline:
 let g:airline#extensions#tabline#enabled = 1
+
+Plugin 'git://github.com/majutsushi/tagbar.git'
 
 Plugin 'rking/ag.vim'
 
@@ -39,6 +38,9 @@ let g:ctrlp_tjump_only_silent = 1  " Skip tag window if only one match is found.
 
 "Plugin 'kana/vim-operator-user'
 "Plugin 'rhysd/vim-clang-format'
+
+Plugin 'Valloric/YouCompleteMe'
+let g:ycm_collect_identifiers_from_tags_files = 1
 
 " clang-format.py
 let g:clang_format_path = '/usr/bin/clang-format-3.8'
