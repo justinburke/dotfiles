@@ -177,7 +177,7 @@ if [ "$TERM" == "screen" ]; then
 	export TERM="screen-256color"
 fi
 
-function bash_ps1() {
+function git_ps1() {
 	export PS1='\[\033[01;32m\](\[\033[01;34m\]\D{%m/%d} \t\[\033[01;32m\]) \j \u@\h:\[\033[01;34m\]$(dirs)$(__git_ps1)\n\[\033[01;34m\]$ \[\033[0m\]'
 	export GIT_PS1_SHOWDIRTYSTATE=1
 }
