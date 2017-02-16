@@ -53,6 +53,13 @@ let g:clang_format_path = '/usr/bin/clang-format-3.8'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+" Automatically local local vimrc files from the following locations:
+call lh#local_vimrc#munge('sandboxlist', $HOME.'/platform')
+call lh#local_vimrc#munge('sandboxlist', '/faststorage/'.$USER.'/platform')
+
+" Disable some YCM warnings:
+let g:ycm_global_ycm_extra_conf = '/dev/null'
+
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 "
@@ -72,6 +79,7 @@ set background=dark
 " my wordfile
 "set dictionary=/usr/share/dict/words
 
+set cursorline		" Make it easier to spot the cursor.
 set hidden		" allow hidden buffers. supposedly a 'must have'
 set hlsearch		" highlight matches on searches
 set ignorecase		" ignore case on searches
