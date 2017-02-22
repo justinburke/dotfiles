@@ -128,9 +128,11 @@ alias sp='source $HOME/.gpg-agent-info'
 # pstree-like output
 alias pst='ps axjf'
 
-export HISTIGNORE="&:l:[bf]g:exit:mutt:w:ws:jobs"
+#export HISTIGNORE="&:l:[bf]g:exit:mutt:w:ws:jobs"
 export HISTSIZE=100000
 export HISTFILESIZE=500000
+# https://spin.atomicobject.com/2016/05/28/log-bash-history/
+export PROMPT_COMMAND='if [ "$(id -u)" -ne 0 ]; then echo "$(date "+%Y-%m-%d.%H:%M:%S") $(pwd) $(history 1)" >> ~/.logs/bash-history-$(date "+%Y-%m-%d").log; fi'
 
 shopt -s cdspell cmdhist extglob
 
