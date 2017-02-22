@@ -49,6 +49,8 @@ let g:clang_format_path = '/usr/bin/clang-format-3.8'
 "Plugin 'editorconfig/editorconfig-vim'
 "let g:EditorConfig_verbose = 1
 
+Plugin 'kshenoy/vim-signature'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
