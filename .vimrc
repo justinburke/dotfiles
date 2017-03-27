@@ -49,7 +49,8 @@ let g:clang_format_path = '/usr/bin/clang-format-3.8'
 "Plugin 'editorconfig/editorconfig-vim'
 "let g:EditorConfig_verbose = 1
 
-Plugin 'kshenoy/vim-signature'
+" This was not super useful without also having the default jumps (like ` and ').
+" Plugin 'kshenoy/vim-signature'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -81,22 +82,23 @@ set background=dark
 " my wordfile
 "set dictionary=/usr/share/dict/words
 
-set cursorline		" Make it easier to spot the cursor.
-set hidden		" allow hidden buffers. supposedly a 'must have'
-set hlsearch		" highlight matches on searches
-set ignorecase		" ignore case on searches
-set laststatus=2	" Always show a status line, even when there's only a single window.
-set magic		" enable extended regexp support
-set nobackup		" don't store my crap in /tmp
-set nocompatible	" non-vi compatible mode
-set nostartofline	" preserve column on page movements
-set nowrap		" so lines don't wrap
-set nowritebackup	" don't create a backup file before overwrite
-set ruler		" show curson position
+set cursorline          " Make it easier to spot the cursor.
+set hidden              " allow hidden buffers. supposedly a 'must have'
+set hlsearch            " highlight matches on searches
+set ignorecase          " ignore case on searches
+set laststatus=2        " Always show a status line, even when there's only a single window.
+set magic               " enable extended regexp support
+set nobackup            " don't store my crap in /tmp
+set nocompatible        " non-vi compatible mode
+set nostartofline       " preserve column on page movements
+set nowrap              " so lines don't wrap
+set nowritebackup       " don't create a backup file before overwrite
+set ruler               " show curson position
+set scrolloff=2         " Minimal number of screen lines to show above/below searches.
 set showbreak=>\        " String to put at the start of lines that have been wrapped.
-set showcmd		" show current uncompleted command
-set showmode		" show current mode
-set wildmenu		" displays filenames in menubar
+set showcmd             " show current uncompleted command
+set showmode            " show current mode
+set wildmenu            " displays filenames in menubar
 set wildmode=list:longest
 
 syntax enable           " Enable syntax highlighting, keep current color settings.
@@ -235,4 +237,4 @@ nnoremap <C-j> :call NumberToggle()<CR>
 :autocmd BufRead,BufNewFile *.cmake,CMakeLists.txt,*.cmake.in setf cmake
 :autocmd BufRead,BufNewFile *.ctest,*.ctest.in setf cmake
 
-" vim:filetype=vim:syntax=on
+" vim:filetype=vim:syntax=on:et
