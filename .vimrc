@@ -1,5 +1,5 @@
 " numerics
-set backspace=2		" so i can backspace over newlines, indentation, etc.
+set backspace=2               " so i can backspace over newlines, indentation, etc.
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " Vundle configuration
