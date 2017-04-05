@@ -86,6 +86,7 @@ set cursorline          " Make it easier to spot the cursor.
 set hidden              " allow hidden buffers. supposedly a 'must have'
 set hlsearch            " highlight matches on searches
 set ignorecase          " ignore case on searches
+set nojoinspaces        " Only insert a single space on join.
 set laststatus=2        " Always show a status line, even when there's only a single window.
 set magic               " enable extended regexp support
 set nobackup            " don't store my crap in /tmp
