@@ -68,10 +68,11 @@ function process_file()
 }
 
 process_file ".Xmodmap"
-process_file ".inputrc"
 process_file ".bash_profile"
 process_file ".bashrc"
 process_file ".conkyrc"
+process_file ".gitconfig"
+process_file ".inputrc"
 process_file ".screenrc"
 process_file ".vimrc"
 
