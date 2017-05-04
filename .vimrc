@@ -175,7 +175,10 @@ vnoremap <c-]> :CtrlPtjumpVisual<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Faster grepping (from https://robots.thoughtbot.com/faster-grepping-in-vim)
 " Use Silver Searcher if available:
-if executable('ag')
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+ if isdirectory('.git')
+   let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+elseif executable('ag')
   " Use ag over grep
   set grepprg=ag\ --nogroup\ --nocolor
 
