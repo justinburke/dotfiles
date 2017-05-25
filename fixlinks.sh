@@ -8,7 +8,12 @@ while getopts ":e" opt; do
     case $opt in
         e)
             echo "Disabling dry-run mode... This is for reals... CTRL-C to cancel"
-            for i in `seq 5 1`; do echo "$i ..."; sleep 1; done
+            # Sadness, `seq 5 1` doesn't work on some platforms...
+            echo "5 ..."; sleep 1
+            echo "4 ..."; sleep 1
+            echo "3 ..."; sleep 1
+            echo "2 ..."; sleep 1
+            echo "1 ..."; sleep 1
             dryrun=0
             ;;
         \?)
