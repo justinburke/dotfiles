@@ -147,6 +147,9 @@ map <F9> :TagbarOpen j<CR>
 map <F10> :w<CR>
 imap <F10> <ESC>:w<CR>a
 
+" Quickly toggle Airline bar
+map <F11> :AirlineToggle<CR>
+
 " Find merge conflicts
 nmap <F6> /<<<<<<<\\|=======\\|>>>>>>><CR>
 
