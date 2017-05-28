@@ -97,4 +97,8 @@ if [ $(uname -s) == "Darwin" ]; then
    fi
 fi
 
+if [ -x "$(brew --prefix)/bin/ctags" ]; then
+  alias ctags="$(brew --prefix)/bin/ctags"
+fi
+
 # set et:sw=3:ts=3
