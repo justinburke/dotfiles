@@ -35,17 +35,24 @@ shopt -s histappend
 
 shopt -s cdspell cmdhist extglob
 
+# https://spin.atomicobject.com/2016/05/28/log-bash-history/
+if [[ ! -d ~/.logs ]]; then
+	mkdir ~/.logs;
+fi
+export PROMPT_COMMAND='if [ "$(id -u)" -ne 0 ]; then echo "$(date "+%Y-%m-%d.%H:%M:%S") $(pwd) $(history 1)" >> ~/.logs/bash-history-$(date "+%Y-%m-%d").log; fi'
+
 export PATH=$PATH:/sbin:/usr/sbin:~/bin
 
-# Change the window title of X terminals 
-case $TERM in
-   xterm*|rxvt|Eterm|eterm)
-      PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/$HOME/~}\007"'
-      ;;
-   screen)
-      PROMPT_COMMAND='echo -ne "\033_${USER}@${HOSTNAME%%.*}:${PWD/$HOME/~}\033\\"'
-      ;;
-esac
+# Disabled 2017-12-16; replaced with command logging.
+## Change the window title of X terminals
+#case $TERM in
+#   xterm*|rxvt|Eterm|eterm)
+#      PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/$HOME/~}\007"'
+#      ;;
+#   screen)
+#      PROMPT_COMMAND='echo -ne "\033_${USER}@${HOSTNAME%%.*}:${PWD/$HOME/~}\033\\"'
+#      ;;
+#esac
 
 ##uncomment the following to activate bash-completion:
 [ -f /etc/profile.d/bash-completion ] && source /etc/profile.d/bash-completion
@@ -58,7 +65,8 @@ export LANG=
 
 export PAGER="less"
 
-export GREP_OPTIONS="--color --line-number"
+# GREP_OPTIONS has been deprecated
+#export GREP_OPTIONS="--color --line-number"
 
 # Fix sort order:
 # (From http://www.madboa.com/geek/utf8/)
