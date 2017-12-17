@@ -105,7 +105,10 @@ if [ $(uname -s) == "Darwin" ]; then
    fi
 fi
 
-if [ -x "$(brew --prefix)/bin/ctags" ]; then
+export GIT_EDITOR=$EDITOR
+
+which brew 2>/dev/null
+if [[ !? == 0 && -x "$(brew --prefix)/bin/ctags" ]]; then
   alias ctags="$(brew --prefix)/bin/ctags"
 fi
 
