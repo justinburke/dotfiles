@@ -54,8 +54,13 @@ export PATH=$PATH:/sbin:/usr/sbin:~/bin
 #      ;;
 #esac
 
-##uncomment the following to activate bash-completion:
-[ -f /etc/profile.d/bash-completion ] && source /etc/profile.d/bash-completion
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
 
 export CL1="\[\033[01;32m\]"
 export CL2="\[\033[01;34m\]"
@@ -112,5 +117,10 @@ which brew 2>/dev/null
 if [[ !? == 0 && -x "$(brew --prefix)/bin/ctags" ]]; then
   alias ctags="$(brew --prefix)/bin/ctags"
 fi
+
+function git_ps() {
+	export PS1='\[\033[01;32m\](\[\033[01;34m\]\D{%m/%d} \t\[\033[01;32m\]) \j \u@\h:\[\033[01;34m\]$(dirs)$(__git_ps1)\n\[\033[01;34m\]$ \[\033[0m\]'
+	export GIT_PS1_SHOWDIRTYSTATE=1
+}
 
 # set et:sw=3:ts=3
