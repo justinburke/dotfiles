@@ -1,9 +1,3 @@
-[user]
-	#name = justinburke
-	#email = justinburke@users.noreply.github.com
-
-	# Force Git to prompt for user.email and user.name for each repository.
-	useConfigOnly = true
 [alias]
   lg = log --graph --date=short --pretty=format:'%C(magenta)%cd %Creset | %C(magenta) %h %G? %Creset | %Creset%s %C(yellow)<%an>%C(red)%d'
   lgf = log -C -M --follow --graph --date=short --pretty=format:'%C(blue)%cd %C(magenta)| %C(blue)%h %G? %C(magenta)| %Creset%s %C(yellow)<%an>%C(red)%d'
@@ -15,24 +9,38 @@
   ff = pull --ff-only
   b = branch
   co = checkout
-[branch "master"]
-  rebase = true
 [branch]
   autosetupmerge = true
   autosetuprebase = always
+[branch "master"]
+  rebase = true
 [color]
   status = auto
   branch = auto
+[commit]
+	gpgsign = true
+#[credential]
+#	        helper = cache
+#		help = cache --timeout=3600
 [fetch]
 	prune = true
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	required = true
-
 [git-p4]
 	largeFileSystem = GitLFS
+[gpg]
+	program = gpg2
 [merge]
 #	ff = only
 [push]
 	default = simple
+[user]
+	#name = justinburke
+	#email = justinburke@users.noreply.github.com
+	name = Justin Burke
+	email = jburke@alt255.com
+
+	# Force Git to prompt for user.email and user.name for each repository.
+	useConfigOnly = true
