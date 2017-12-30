@@ -4,6 +4,8 @@
 
 	# Force Git to prompt for user.email and user.name for each repository.
 	useConfigOnly = true
+	name = Justin Burke
+	email = jburke@alt255.com
 [alias]
   lg = log --graph --date=short --pretty=format:'%C(magenta)%cd %Creset | %C(magenta) %h %G? %Creset | %Creset%s %C(yellow)<%an>%C(red)%d'
   lgf = log -C -M --follow --graph --date=short --pretty=format:'%C(blue)%cd %C(magenta)| %C(blue)%h %G? %C(magenta)| %Creset%s %C(yellow)<%an>%C(red)%d'
