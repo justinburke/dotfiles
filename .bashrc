@@ -47,9 +47,6 @@ case $TERM in
       ;;
 esac
 
-##uncomment the following to activate bash-completion:
-[ -f /etc/profile.d/bash-completion ] && source /etc/profile.d/bash-completion
-
 export CL1="\[\033[01;32m\]"
 export CL2="\[\033[01;34m\]"
 export PS1="$CL1($CL2\D{%m/%d} \t$CL1) \j \u@\h:$CL2\w\n$CL2$ \[\033[0m\]"
@@ -75,15 +72,17 @@ if [ -d /ramdisk -a ! -d $RAMDIR ]; then
    mkdir $RAMDIR && chmod 0700 $RAMDIR
 fi
 
-if [ -f /etc/bash_completion.d/password-store ]; then
-   source /etc/bash_completion.d/password-store
-elif [ -f /usr/local/etc/bash_completion.d/password-store ]; then
-   source /usr/local/etc/bash_completion.d/password-store
-fi
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
-if [ -f /usr/local/etc/bash_completion.d/brew ]; then
-   source /usr/local/etc/bash_completion.d/brew
-fi
+#if [ -f /etc/bash_completion.d/password-store ]; then
+#   source /etc/bash_completion.d/password-store
+#elif [ -f /usr/local/etc/bash_completion.d/password-store ]; then
+#   source /usr/local/etc/bash_completion.d/password-store
+#fi
+#
+#if [ -f /usr/local/etc/bash_completion.d/brew ]; then
+#   source /usr/local/etc/bash_completion.d/brew
+#fi
 
 if [ $(uname -s) == "Darwin" ]; then
    alias ls="ls -F"
