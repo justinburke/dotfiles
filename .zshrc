@@ -1,6 +1,3 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/jburke/.oh-my-zsh
 
@@ -114,7 +111,8 @@ export GREP_OPTIONS="--color --line-number"
 # (From http://www.madboa.com/geek/utf8/)
 export LC_COLLATE="C"
 
-# use -X so that less doesn't clear the screen
+# -R: display raw control characters
+# -X: don't clear the screen
 export LESS="${LESS:+$LESS }-X -R"
 
 alias fixagent="ln -sf $SSH_AUTH_SOCK $HOME/.ssh/agent-socket"
@@ -151,7 +149,7 @@ HISTFILE="$HOME/.zsh_history"
 HISTSIZE=10000000
 SAVEHIST=10000000
 HISTORY_IGNORE="(&|l|[bf]g|exit|w|ws|jobs)"
-# Note about `setopt`: names are case insensitive and underscores are ignored.
+# Note about `setopt`: names are case insensitive and underscores are ignored. (WTF)
 setopt BANG_HIST                 # Treat the '!' character specially during expansion.
 setopt EXTENDED_HISTORY          # Write the history file in the ":start:elapsed;command" format.
 setopt INC_APPEND_HISTORY        # Write to the history file immediately, not when the shell exits.
@@ -170,8 +168,8 @@ ZLE_REMOVE_SUFFIX_CHARS=""       # Don't automatically remove trailing (suffix) 
                                  # Default value is ' \t\n;&|'.
 setopt NO_AUTO_REMOVE_SLASH      # Don't automatically remove trailing slash after a completion.
 
-# Ctrl+W
-# Originally from https://github.com/andreafrancia/dot-files/blob/master/.zshrc
+# Fix Ctrl+W
+# Adapted from https://github.com/andreafrancia/dot-files/blob/master/.zshrc
 unix-word-rubout() {
     local WORDCHARS="*?/_-.[]~=&;!#$%^(){}<>'\""
     zle backward-kill-word
@@ -180,6 +178,7 @@ zle -N unix-word-rubout
 bindkey '^W' unix-word-rubout
 
 
+# OSX configuration
 if [[ $(uname -s) == "Darwin" ]]; then
   if [[ -x /usr/local/bin/vim ]]; then
     export EDITOR="/usr/local/bin/vim"
