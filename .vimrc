@@ -32,7 +32,7 @@ filetype plugin indent on    " required
 set backspace=2		" so i can backspace over newlines, indentation, etc.
 
 autocmd GUIEnter * :colors koehler
-set background=dark
+" set background=dark
 
 " my wordfile
 "set dictionary=/usr/share/dict/words
