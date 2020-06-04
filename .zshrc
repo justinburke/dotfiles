@@ -63,6 +63,7 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+setopt noautopushd
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -191,3 +192,7 @@ if [[ $(uname -s) == "Darwin" ]]; then
 fi
 
 # vi:syntax=sh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export BYOBU_PREFIX=/usr/local
